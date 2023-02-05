@@ -7,7 +7,7 @@ export class UsersController {
   constructor(private readonly userService: UserService) {}
 
   @UseGuards(JwtAuthGuard)
-  @Get('/me')
+  @Get('me')
   me(@Req() request) {
     const userId = request.user.userId;
     return this.userService.findOne(userId);
